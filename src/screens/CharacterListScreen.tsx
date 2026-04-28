@@ -1,6 +1,7 @@
-import { View, Text, Button, FlatList, TouchableOpacity } from "react-native";
-import { useCharacterStore } from "../stores/character.store";
+import { Button, FlatList, StyleSheet, Text, View } from "react-native";
+import CardView from "../components/CardView";
 import { createBaseCharacter } from "../core/character/character.factory";
+import { useCharacterStore } from "../stores/character.store";
 
 export function CharacterListScreen() {
   const {
@@ -15,25 +16,25 @@ export function CharacterListScreen() {
   };
 
   return (
-    <View style={{ flex: 1, padding: 20 }}>
+    <View style={styles.container}>
       <Button title="Criar personagem" onPress={handleCreate} />
 
-      <FlatList
-        data={characters}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (
-          <TouchableOpacity
-            onPress={() => setActiveCharacter(item.id)}
-            style={{
-              padding: 15,
-              borderBottomWidth: 1,
-            }}
+      {characters.map((char) => (<CardView
+            onPress={() => setActiveCharacter(char.id)}
+            
           >
-            <Text>Personagem {item.id.slice(0, 5)}</Text>
-            <Text>Nível {item.level}</Text>
-          </TouchableOpacity>
-        )}
-      />
+            <Text>Personagem {char.id.slice(0, 5)}</Text>
+            <Text>Nível {char.level}</Text>
+          </CardView>)
+          )}
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: { flex: 1, padding: 20, gap: 10 },
+  item: {
+    padding: 15,
+    borderBottomWidth: 1,
+  }
+})
