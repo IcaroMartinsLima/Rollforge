@@ -1,14 +1,11 @@
 import { Button, FlatList, StyleSheet, Text, View } from "react-native";
 import CardView from "../components/CardView";
-import { createBaseCharacter } from "../core/character/character.factory";
-import { useCharacterStore } from "../stores/character.store";
+import { createBaseCharacter } from "../lib/character";
+import { useCharacterStore } from "../store/characterStore";
 
 export function CharacterListScreen() {
-  const {
-    characters,
-    createCharacter,
-    setActiveCharacter,
-  } = useCharacterStore();
+  const { characters, createCharacter, setActiveCharacter } =
+    useCharacterStore();
 
   const handleCreate = () => {
     const newChar = createBaseCharacter();
@@ -19,14 +16,12 @@ export function CharacterListScreen() {
     <View style={styles.container}>
       <Button title="Criar personagem" onPress={handleCreate} />
 
-      {characters.map((char) => (<CardView
-            onPress={() => setActiveCharacter(char.id)}
-            
-          >
-            <Text>Personagem {char.id.slice(0, 5)}</Text>
-            <Text>Nível {char.level}</Text>
-          </CardView>)
-          )}
+      {characters.map((char) => (
+        <CardView onPress={() => setActiveCharacter(char.id)}>
+          <Text>Personagem {char.id.slice(0, 5)}</Text>
+          <Text>Nível {char.level}</Text>
+        </CardView>
+      ))}
     </View>
   );
 }
@@ -36,5 +31,5 @@ const styles = StyleSheet.create({
   item: {
     padding: 15,
     borderBottomWidth: 1,
-  }
-})
+  },
+});

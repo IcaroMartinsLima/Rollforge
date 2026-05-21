@@ -1,23 +1,17 @@
 import { create } from "zustand";
-import { Character } from "../core/character/character.types";
+import { Character } from "../types/character";
 
 type CharacterStore = {
   characters: Character[];
-
   activeCharacterId: string | null;
-
   createCharacter: (character: Character) => void;
-
   deleteCharacter: (id: string) => void;
-
   setActiveCharacter: (id: string) => void;
-
   updateCharacter: (character: Character) => void;
 };
 
 export const useCharacterStore = create<CharacterStore>((set, get) => ({
   characters: [],
-
   activeCharacterId: null,
 
   createCharacter: (character) =>
