@@ -10,7 +10,7 @@ type CharacterStore = {
   updateCharacter: (character: Character) => void;
 };
 
-export const useCharacterStore = create<CharacterStore>((set, get) => ({
+export const useCharacterStore = create<CharacterStore>((set) => ({
   characters: [],
   activeCharacterId: null,
 

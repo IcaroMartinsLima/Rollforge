@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState } from "react";
 import { useColorScheme } from "react-native";
 import { darkTheme, lightTheme } from "./theme";
 
-type ThemeType = typeof lightTheme;
+type ThemeType = typeof lightTheme | typeof darkTheme;
 
 interface ThemeContextData {
   theme: ThemeType;
