@@ -26,7 +26,7 @@ Aplicativo mobile para criação e gerenciamento de personagens de RPG de mesa (
 
 ## Roadmap
 
-### Fase 1 — Personagem (implementado)
+### Fase 1 — Personagem ✅ `main`
 - [x] Criação de personagem com valores padrão
 - [x] Listagem de personagens em cards
 - [x] Exclusão de personagens
@@ -36,27 +36,28 @@ Aplicativo mobile para criação e gerenciamento de personagens de RPG de mesa (
 - [x] Cálculo de valor de perícia (proficiente/expertise)
 - [x] Tema claro/escuro
 
-### Fase 2 — Edição e Persistência
+### Fase 2 — Edição e Persistência `fase-2`
+- [ ] integração com expoRouter e implementação de tela inicial de personagem
 - [ ] Tela de edição de atributos (distribuição de pontos / rolagem)
 - [ ] Tela de edição de perícias (proficiência e expertise)
 - [ ] Edição de nível do personagem
 - [ ] Persistência local (AsyncStorage / SQLite)
 - [ ] Deleção com confirmação
 
-### Fase 3 — Ficha de Personagem
+### Fase 3 — Ficha de Personagem `fase-3`
 - [ ] Tela de ficha completa com atributos, perícias e modificadores calculados
 - [ ] Exibição de salvaguardas (saving throws)
 - [ ] Exibição de CA (Classe de Armadura), HP (Pontos de Vida), deslocamento
 - [ ] Seleção de raça e classe com bônus iniciais
 
-### Fase 4 — Sistema de Navegação
+### Fase 4 — Sistema de Navegação `fase-4`
 - [ ] Navegação entre telas (React Navigation)
 - [ ] Tela inicial com lista de personagens
 - [ ] Tela de ficha detalhada
 - [ ] Tela de edição de atributos
 - [ ] Tela de edição de perícias
 
-### Fase 5 — Multijogador e Avançado
+### Fase 5 — Multijogador e Avançado `fase-5`
 - [ ] Exportar/importar personagem (JSON)
 - [ ] Suporte a múltiplos sistemas de RPG
 - [ ] Rolagem de dados integrada (d4, d6, d8, d10, d12, d20)
